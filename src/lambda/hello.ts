@@ -5,7 +5,7 @@ import {
 // @ts-ignore
 } from "@types/aws-lambda"
 
-const handler = (
+exports.handler = (
   event: APIGatewayProxyEvent, 
   context: Context, 
   callback: APIGatewayProxyCallback
@@ -15,5 +15,3 @@ const handler = (
     body: "Hello, World"
   });
 };
-
-export default handler
