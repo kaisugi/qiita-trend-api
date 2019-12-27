@@ -4,11 +4,7 @@ import cheerio from 'cheerio'
 const fetchTrend = (html: string) => {
   const $ = cheerio.load(html)
   const raw = $('div[data-hyperapp-app="Trend"]').attr('data-hyperapp-props')
-  if (!raw) {
-    return {}
-  } else {
-    JSON.parse(raw).trend.edges
-  }
+  return JSON.parse(raw ?? '{}').trend.edges
 }
 
 export const handler = async () => {
