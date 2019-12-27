@@ -11,7 +11,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: "./src/index.html",
+      title: "Qiita Trend API",
+      meta: [
+        {viewport: "width=device-width, initial-scale=1.0"},
+        {"http-equiv": "X-UA-Compatible", content: "IE=edge"},
+        {"charset": "UTF-8"}
+      ]
     })
   ]
 };
