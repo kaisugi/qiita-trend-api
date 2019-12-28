@@ -4,5 +4,5 @@
   functions = "dist/server"
 
 [[redirects]]
-  from = "/.netlify/functions/trend.json"
-  to = "/.netlify/functions/trend"
+  from = "/trend"
+  to = "/.netlify/functions/:trend"
