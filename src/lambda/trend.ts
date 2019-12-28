@@ -18,7 +18,7 @@ export const handler = async () => {
         statusCode: 200,
         headers: {
           'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json; charset=utf-8'
         },
         body: JSON.stringify(fetchTrend(data)),
       }
