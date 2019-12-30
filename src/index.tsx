@@ -1,12 +1,12 @@
 import React from "react"
 import ReactDom from "react-dom"
 
-import * as style from "./style.css"
+import * as styles from "./style.css"
 
 const Main = () => {
   return (
-    <div className={style.main}>
-      <h1 className={style.h1}>Qiita Trend API</h1>
+    <div className={styles.main}>
+      <h1 className={styles.h1}>Qiita Trend API</h1>
       <div>
         <p>Qiita のトレンド記事の一覧を JSON で返す非公式 API です。</p>
         <p><a href="/.netlify/functions/trend">トレンド記事一覧</a></p>
