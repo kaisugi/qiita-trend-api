@@ -5,7 +5,13 @@ const fetchTrend = (html: string) => {
   const $ = cheerio.load(html)
   const raw = $('div[data-hyperapp-app="Trend"]').attr('data-hyperapp-props')
   if (raw === undefined) return {}
-  return JSON.parse(raw).trend.edges
+  const rawData = JSON.parse(raw).trend.edges
+
+  return rawData.map(obj => {
+    // 不要なプロパティを削除
+    delete obj.followingLikers
+    delete obj.isLikedByViewer
+  })
 }
 
 export const handler = async () => {
