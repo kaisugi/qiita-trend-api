@@ -11,10 +11,10 @@ const Main = () => {
       <h1 className={styles.h1}>Qiita Trend API</h1>
       <div>
         <p>Qiita のトレンド記事の一覧を JSON で返す非公式 API です。</p>
-        <p><a href="/.netlify/functions/trend">トレンド記事一覧（JSON）</a><br/>
-        <Link to="/trend">トレンド記事一覧（テキスト）</Link></p>
+        <p><a href="/.netlify/functions/trend" className={styles.a}>トレンド記事一覧（JSON）</a><br/>
+        <Link to="/trend" className={styles.a}>トレンド記事一覧（テキスト）</Link></p>
         <p>Qiita 側の仕様変更などにより、予告なくサービスを終了する場合があります。<br/>
-        何かありましたら <a href="https://github.com/7ma7X/qiita-trend-api/issues">Issue</a> にてお願いいたします。</p>
+        何かありましたら <a href="https://github.com/7ma7X/qiita-trend-api/issues" className={styles.a}>Issue</a> にてお願いいたします。</p>
         <p>@ 2019 HelloRusk</p>
       </div>
     </div>
@@ -49,7 +49,7 @@ const Trend = () => {
       const link = `https://qiita.com/taknya/items/${id}`
       const title = trend.node.title
 
-      arr.push(<p><a href={link}>{title}</a></p>)
+      arr.push(<p><a className={styles.a} href={link}>{title}</a></p>)
     }
 
     return arr

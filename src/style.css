@@ -3,9 +3,12 @@
   width: 90%;
   max-width: 656px;
   margin: 0 auto;
-  text-decoration: none !important;
 }
 
 .h1 {
   font-weight: normal;
+}
+
+.a {
+  text-decoration: none;
 }
