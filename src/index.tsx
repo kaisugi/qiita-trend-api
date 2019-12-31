@@ -21,7 +21,7 @@ const Main = () => {
   )
 }
 
-const Trend = async () => {
+const Trend = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const Root = () => (
   <BrowserRouter>
     <div>
       <Route exact path="/" component={Main} />
-      <Route exact path="/trend" component={Trend} />
+      <Route path="/trend" component={Trend} />
     </div>
   </BrowserRouter>
 )
