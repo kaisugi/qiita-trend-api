@@ -39,7 +39,7 @@ const Root = () => (
   <BrowserRouter>
     <div>
       <Route exact path="/" component={Main} />
-      <Route exact path="/trend" component={Memo} />
+      <Route exact path="/trend" component={Trend} />
     </div>
   </BrowserRouter>
 )
