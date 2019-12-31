@@ -21,15 +21,27 @@ const Main = () => {
   )
 }
 
-const Trend = () => {
-  const data = axios.get("/.netlify/functions/trend")
-    .then(res => res.data)
+const Trend = async () => {
+  const components = await axios.get("/.netlify/functions/trend")
+    .then(({ data }) => {
+      const arr: JSX.Element[] = []
+
+      for (const trend of data){
+        const id = trend.node.uuid
+        const link = `https://qiita.com/taknya/items/${id}`
+        const title = trend.node.title
+
+        arr.push(<p><a href={link}>{title}</a></p>)
+      }
+
+      return arr
+    })
 
   return (
     <div className={styles.main}>
       <h1 className={styles.h1}>Qiita Trend API</h1>
       <div>
-        {data}
+        {components}
       </div>
     </div>
   )
