@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import ReactDom from "react-dom"
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import axios from "axios"
@@ -22,26 +22,38 @@ const Main = () => {
 }
 
 const Trend = async () => {
-  const components = await axios.get("/.netlify/functions/trend")
-    .then(({ data }) => {
-      const arr: JSX.Element[] = []
+  const [data, setData] = useState([])
 
-      for (const trend of data){
-        const id = trend.node.uuid
-        const link = `https://qiita.com/taknya/items/${id}`
-        const title = trend.node.title
+  useEffect(() => {
+    const f = async () => {
+      const res = await axios(
+        "https://qiita-api.netlify.com/.netlify/functions/trend"
+      )
 
-        arr.push(<p><a href={link}>{title}</a></p>)
-      }
+      setData(res.data)
+    }
+    f()
+  })
 
-      return arr
-    })
+  const renderTrends = (data) => {
+    const arr: JSX.Element[] = []
+
+    for (const trend of data){
+      const id = trend.node.uuid
+      const link = `https://qiita.com/taknya/items/${id}`
+      const title = trend.node.title
+
+      arr.push(<p><a href={link}>{title}</a></p>)
+    }
+
+    return arr
+  }
 
   return (
     <div className={styles.main}>
       <h1 className={styles.h1}>Qiita Trend API</h1>
       <div>
-        {components}
+        {renderTrends(data)}
       </div>
     </div>
   )
