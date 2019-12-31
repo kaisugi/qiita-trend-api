@@ -22,12 +22,12 @@ const Main = () => {
 }
 
 const Trend = () => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState<JSX.Element[] | undefined>(undefined)
 
   useEffect(() => {
     const f = async () => {
       const res = await axios(
-        "https://qiita-api.netlify.com/.netlify/functions/trend"
+        "/.netlify/functions/trend"
       )
 
       setData(res.data)
@@ -36,6 +36,12 @@ const Trend = () => {
   })
 
   const renderTrends = (data) => {
+    if (data === undefined) {
+      return (
+        <p>Loading...</p>
+      )
+    }
+
     const arr: JSX.Element[] = []
 
     for (const trend of data){

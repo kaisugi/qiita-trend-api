@@ -6,3 +6,7 @@
 [[redirects]]
   from = "/trend.json"
   to = "/.netlify/functions/trend"
+
+[[redirects]]
+  from = "/trend"
+  to = "/"
