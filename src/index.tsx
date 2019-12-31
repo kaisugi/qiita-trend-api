@@ -49,7 +49,7 @@ const Trend = () => {
       const link = `https://qiita.com/taknya/items/${id}`
       const title = trend.node.title
 
-      arr.push(<p><a className={styles.a} href={link}>{title}</a></p>)
+      arr.push(<p><a target="_blank" className={styles.a} href={link}>{title}</a></p>)
     }
 
     return arr
