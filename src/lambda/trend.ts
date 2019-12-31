@@ -11,6 +11,7 @@ const fetchTrend = (html: string) => {
     // 不要なプロパティを削除
     delete obj.followingLikers
     delete obj.isLikedByViewer
+    return obj
   })
 }
 
