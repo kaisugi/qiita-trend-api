@@ -45,8 +45,7 @@ const Trend = () => {
     const arr: JSX.Element[] = []
 
     for (const trend of data){
-      const id = trend.node.uuid
-      const link = `https://qiita.com/7ma7X/items/${id}`
+      const link = `https://qiita.com/${trend.node.author.urlName}/items/${trend.node.uuid}`
       const title = trend.node.title
 
       arr.push(<p><a target="_blank" className={styles.a} href={link}>{title}</a></p>)
