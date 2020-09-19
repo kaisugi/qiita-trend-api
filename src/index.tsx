@@ -60,6 +60,7 @@ const Trend = () => {
       <div>
         {renderTrends(data)}
       </div>
+      <br />
     </div>
   )
 }
