@@ -3,7 +3,7 @@ import cheerio from 'cheerio'
 
 const fetchTrend = (html: string) => {
   const $ = cheerio.load(html)
-  const raw = $('data-component-name="HomeArticleTrendFeed"').text()
+  const raw = $('script[data-component-name=HomeArticleTrendFeed]').html() ?? ''
   if (raw === undefined) return {}
   const rawData = JSON.parse(raw).trend.edges
 
