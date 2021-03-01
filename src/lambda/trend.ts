@@ -13,8 +13,10 @@ const fetchTrend = (html: string) => {
     delete obj.isLikedByViewer
 
     delete obj.node.isLikedByViewer
+    delete obj.node.isStockableByViewer
     delete obj.node.isStockedByViewer
     delete obj.node.followingLikers
+    delete obj.node.recentlyFollowingLikers
 
     return obj
   })
