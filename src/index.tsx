@@ -10,7 +10,7 @@ const Main = () => {
     <div className={styles.main}>
       <h1 className={styles.h1}>Qiita Trend API</h1>
       <div>
-        <p>Qiita のトレンド記事の一覧を JSON で返す非公式 API です。</p>
+        <p>Qiita のトレンド記事の一覧を JSON で返す非公式 API です。Zenn 版は<a href="https://zenn-api.netlify.app/">こちら</a></p>
         <p><a href="/.netlify/functions/trend" className={styles.a}>トレンド記事一覧（JSON）</a><br/>
         <Link to="/trend" className={styles.a}>トレンド記事一覧（テキスト）</Link></p>
         <p>Qiita 側の仕様変更などにより、予告なくサービスを終了する場合があります。<br/>
