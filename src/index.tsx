@@ -14,7 +14,7 @@ const Main = () => {
         <p><a href="/.netlify/functions/trend" className={styles.a}>トレンド記事一覧（JSON）</a><br/>
         <Link to="/trend" className={styles.a}>トレンド記事一覧（テキスト）</Link></p>
         <p>Qiita 側の仕様変更などにより、予告なくサービスを終了する場合があります。<br/>
-        何かありましたら <a href="https://github.com/7ma7X/qiita-trend-api/issues" className={styles.a}>Issue</a> にてお願いいたします。</p>
+        何かありましたら <a href="https://github.com/HelloRusk/qiita-trend-api/issues" className={styles.a}>Issue</a> にてお願いいたします。</p>
         <p>@ 2021 HelloRusk</p>
       </div>
     </div>
