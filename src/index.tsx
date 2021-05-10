@@ -33,7 +33,7 @@ const Trend = () => {
       setData(res.data)
     }
     f()
-  })
+  }, [])
 
   const renderTrends = (data) => {
     if (data === undefined) {
