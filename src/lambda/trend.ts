@@ -3,9 +3,9 @@ import cheerio from 'cheerio'
 
 const fetchTrend = (html: string) => {
   const $ = cheerio.load(html)
-  const raw = $('script[data-component-name=HomeArticleTrendFeed]').html() ?? ''
+  const raw = $('script[data-component-name=HomeIndexPage]').html() ?? ''
   if (raw === undefined) return {}
-  const rawData = JSON.parse(raw).trend.edges
+  const rawData = JSON.parse(raw).trend.trend.edges
 
   return rawData.map(obj => {
     // 不要なプロパティを削除
