@@ -2,6 +2,7 @@ import styles from '../styles/Home.module.css'
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import Head from 'next/head'
 
 const Trend: NextPage = () => {
   const [data, setData] = useState<JSX.Element[] | undefined>(undefined)
@@ -38,6 +39,11 @@ const Trend: NextPage = () => {
 
   return (
     <div className={styles.main}>
+      <Head>
+        <title>Qiita Trend API</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Qiita のトレンド記事の一覧を JSON で返す非公式 API です。" />
+      </Head>
       <h1 className={styles.h1}>Qiita Trend API</h1>
       <div>
         {renderTrends(data)}
