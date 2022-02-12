@@ -1,10 +1,16 @@
 import styles from '../styles/Home.module.css'
 import type { NextPage } from 'next'
 import Link from 'next/link'
+import Head from 'next/head'
 
 const Home: NextPage = () => {
   return (
     <div className={styles.main}>
+      <Head>
+        <title>Qiita Trend API</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Qiita のトレンド記事の一覧を JSON で返す非公式 API です。" />
+      </Head>
       <h1>Qiita Trend API</h1>
       <div>
         <p>Qiita のトレンド記事の一覧を JSON で返す非公式 API です。Zenn 版は<a href="https://zenn-api.vercel.app/">こちら</a></p>
