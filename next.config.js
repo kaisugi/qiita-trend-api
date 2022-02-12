@@ -9,6 +9,11 @@ const nextConfig = {
         destination: '/api/trend',
         permanent: true,
       },
+      {
+        source: '/.netlify/functions/trend',
+        destination: '/api/trend',
+        permanent: true,
+      },
     ]
   },
 }
