@@ -28,9 +28,9 @@ type TrendObjectNodeType = {
 
 const fetchTrend = (html: string) => {
   const $ = cheerio.load(html)
-  const raw = $('script[data-component-name=HomeIndexPage]').html() ?? ''
+  const raw = $('script[data-component-name=New2HomeTrendPage]').html() ?? ''
   if (raw === undefined) return {}
-  const rawData = JSON.parse(raw).trend.trend.edges
+  const rawData = JSON.parse(raw).trend.edges
 
   return rawData.map((obj: TrendObjectType) => {
     // 不要なプロパティを削除
